@@ -4,8 +4,8 @@ const hbs = require ('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-const app = express ()
-
+const app  = express ()
+const port = process.env.PORT || 3000
 
 // app.com
 // app.com/help
@@ -97,8 +97,8 @@ app.get('*', (req,resp) => {
     })
 })
 
-app.listen (3000, () => {
-    console.log('Server started')
+app.listen (port, () => {
+    console.log('Server started on  ' + port )
 })
 
 process.on('uncaughtException', function (err) {
